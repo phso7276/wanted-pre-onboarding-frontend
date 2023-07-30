@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Input from "../../components/atoms/Input";
-import Button from "../../components/atoms/button";
-import useValidation from "../../hooks/useValidation";
+import { useNavigate } from "react-router-dom";
+import Input from "components/atoms/Input";
+import Button from "components/atoms/button";
+import useValidation from "hooks/useValidation";
+import { signupApi } from "apis/signupApi";
+
 const SignupPage = () => {
   const [form, setForm] = useState({
     email: "",
@@ -11,6 +14,17 @@ const SignupPage = () => {
   useEffect(() => {
     console.log(isValid);
   }, [isValid]);
+
+  const navigate = useNavigate();
+
+  const onClickHandler = () => {
+    signupApi(form).then((res) => {
+      console.log(res.status);
+      if (res.status === 201) {
+        navigate("/signin");
+      }
+    });
+  };
 
   const changeEmail = (e) => {
     setForm({ ...form, email: e.target.value });
@@ -36,7 +50,12 @@ const SignupPage = () => {
       />
 
       {isValid.isEmail && isValid.isPassword ? (
-        <Button testid="signup-button" type="button" text="회원가입" />
+        <Button
+          testid="signup-button"
+          type="button"
+          text="회원가입"
+          onClickHandler={onClickHandler}
+        />
       ) : (
         <Button
           testid="signup-button"
