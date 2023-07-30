@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Input from "components/atoms/Input";
 import Button from "components/atoms/button";
 import useValidation from "hooks/useValidation";
-import { signupApi } from "apis/signupApi";
+import { signupApi } from "services/apis/signupApi";
+import useIsLoggedIn from "hooks/useIsLoggedIn";
 
 const SignupPage = () => {
+  useIsLoggedIn();
   const [form, setForm] = useState({
     email: "",
     password: "",

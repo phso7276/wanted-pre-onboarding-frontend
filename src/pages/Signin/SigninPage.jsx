@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Navigate } from "react-router";
 import Input from "components/atoms/Input";
 import Button from "components/atoms/button";
 import { signinApi } from "services/apis/userApi";
+import useIsLoggedIn from "hooks/useIsLoggedIn";
 
 const SigninPage = () => {
+  useIsLoggedIn();
   const [form, setForm] = useState({
     email: "",
     password: "",
