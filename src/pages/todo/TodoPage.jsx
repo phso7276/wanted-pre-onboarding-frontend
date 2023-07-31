@@ -11,16 +11,13 @@ const TodoPage = () => {
   const [todo, setTodo] = useState("");
   useEffect(() => {
     getTodoApi().then((res) => {
-      console.log(res);
       setTodoList(res.data);
     });
   }, []);
 
   const onClickHandler = () => {
-    alert("api 호출 " + todo);
     /**post api호출 */
     createTodoApi(todo).then((res) => {
-      console.log(res);
       setTodoList((currentArr) => [res.data, ...currentArr]);
     });
   };
