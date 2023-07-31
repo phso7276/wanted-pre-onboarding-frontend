@@ -1,10 +1,10 @@
 import Input from "../atoms/Input";
-const TodoItem = ({ item, idx }) => {
+const TodoItem = ({ item }) => {
   return (
-    <li key={idx}>
+    <li>
       <label>
-        <Input type="checkbox" />
-        <span>{item}</span>
+        <Input type={"checkbox"} checked={item.isCompleted} />
+        <span>{item.todo}</span>
       </label>
     </li>
   );
