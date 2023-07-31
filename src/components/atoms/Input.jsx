@@ -6,7 +6,7 @@ export default function Input(props) {
         type={props.type}
         placeholder={props.placeholder}
         value={props.value}
-        onChange={props.handler}
+        onChange={props.onChange}
       />
     </div>
   );

@@ -37,11 +37,11 @@ const SignupPage = () => {
   return (
     <div>
       <Input
-        testid="email-input"
-        type="email"
-        placeholder="이메일"
+        testid={"email-input"}
+        type={"email"}
+        placeholder={"이메일"}
         value={form.email}
-        handler={changeEmail}
+        onChange={changeEmail}
       />
       <Input
         testid="password-input"

@@ -7,5 +7,15 @@ export const getTodoApi = async () => {
     return response;
   } catch (error) {
     console.error("error", error);
+    return [];
+  }
+};
+
+export const createTodoApi = async (todo) => {
+  try {
+    const response = await authInstance.post("/todos", { todo: todo });
+    return response;
+  } catch (error) {
+    return error;
   }
 };
