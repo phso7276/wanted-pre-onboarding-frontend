@@ -19,3 +19,15 @@ export const createTodoApi = async (todo) => {
     return error;
   }
 };
+
+export const updateTodoApi = async (item) => {
+  try {
+    const response = await authInstance.put(`/todos/${item.id}`, {
+      todo: item.todo,
+      isCompleted: !item.isCompleted,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

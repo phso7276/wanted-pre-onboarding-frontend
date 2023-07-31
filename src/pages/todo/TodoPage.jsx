@@ -9,6 +9,7 @@ const TodoPage = () => {
   useIsLoggedIn();
   const [todoList, setTodoList] = useState([]);
   const [todo, setTodo] = useState("");
+
   useEffect(() => {
     getTodoApi().then((res) => {
       setTodoList(res.data);
@@ -21,6 +22,7 @@ const TodoPage = () => {
       setTodoList((currentArr) => [res.data, ...currentArr]);
     });
   };
+
   return (
     <div>
       <div>투두리스트</div>
@@ -36,7 +38,16 @@ const TodoPage = () => {
         text="추가"
         onClickHandler={onClickHandler}
       />
-      <TodoItemList todoList={todoList} />
+      {todoList.map((item) => {
+        return (
+          <TodoItemList
+            todo={item}
+            key={item.id}
+            todoList={todoList}
+            setTodoList={setTodoList}
+          />
+        );
+      })}
     </div>
   );
 };
