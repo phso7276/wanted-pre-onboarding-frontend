@@ -11,10 +11,10 @@ const baseAPI = (url, options) => {
 };
 
 const authAPI = (url, options) => {
-  const token = "token";
+  const token = localStorage.getItem("token");
   return axios.create({
     baseURL: url,
-    headers: { Authorization: "Bearer " + token },
+    headers: { Authorization: `Bearer ${token}` },
     ...options,
   });
 };
