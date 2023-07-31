@@ -13,9 +13,9 @@ const SignupPage = () => {
     password: "",
   });
   const { isValid } = useValidation(form);
-  useEffect(() => {
-    console.log(isValid);
-  }, [isValid]);
+  // useEffect(() => {
+  //   console.log(isValid);
+  // }, [isValid]);
 
   const navigate = useNavigate();
 
