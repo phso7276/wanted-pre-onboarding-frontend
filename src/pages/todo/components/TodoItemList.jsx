@@ -1,6 +1,6 @@
 import React from "react";
 import TodoItem from "components/organisms/Todoitem";
-import { updateTodoApi, getTodoApi } from "services/apis/todoApi";
+import { updateTodoApi, deleteTodoApi } from "services/apis/todoApi";
 
 const TodoItemList = ({ todo, todoList, setTodoList }) => {
   const checkboxHandler = () => {
@@ -17,9 +17,21 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
       );
     });
   };
+
+  const deleteItem = () => {
+    deleteTodoApi(todo.id).then((res) => {
+      console.log(res);
+      setTodoList(todoList.filter((item) => item.id !== todo.id));
+    });
+  };
   return (
     <ul>
-      <TodoItem item={todo} key={todo.id} checkboxHandler={checkboxHandler} />
+      <TodoItem
+        item={todo}
+        key={todo.id}
+        checkboxHandler={checkboxHandler}
+        deleteItem={deleteItem}
+      />
     </ul>
   );
 };

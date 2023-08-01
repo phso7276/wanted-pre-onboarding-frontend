@@ -31,3 +31,13 @@ export const updateTodoApi = async (item) => {
     return error;
   }
 };
+
+export const deleteTodoApi = async (id) => {
+  try {
+    const response = await authInstance.delete(`/todos/${id}`);
+
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
