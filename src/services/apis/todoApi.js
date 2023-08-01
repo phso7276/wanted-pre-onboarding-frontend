@@ -20,15 +20,15 @@ export const createTodoApi = async (todo) => {
   }
 };
 
-export const updateTodoApi = async (item) => {
+export const updateTodoApi = async (id, todo, isCompleted) => {
   try {
-    const response = await authInstance.put(`/todos/${item.id}`, {
-      todo: item.todo,
-      isCompleted: !item.isCompleted,
+    const response = await authInstance.put(`/todos/${id}`, {
+      todo: todo,
+      isCompleted: isCompleted,
     });
     return response;
   } catch (error) {
-    return error;
+    console.log(error);
   }
 };
 

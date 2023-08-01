@@ -38,16 +38,18 @@ const TodoPage = () => {
         text="추가"
         onClickHandler={onClickHandler}
       />
-      {todoList.map((item) => {
-        return (
-          <TodoItemList
-            todo={item}
-            key={item.id}
-            todoList={todoList}
-            setTodoList={setTodoList}
-          />
-        );
-      })}
+      <ul>
+        {todoList.map((item) => {
+          return (
+            <TodoItemList
+              todo={item}
+              key={item.id}
+              todoList={todoList}
+              setTodoList={setTodoList}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };

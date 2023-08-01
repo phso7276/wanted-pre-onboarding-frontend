@@ -13,16 +13,13 @@ const TodoItem = ({ item, checkboxHandler, deleteItem }) => {
         />
         <span>{item.todo}</span>
       </label>
-      <Button data-testid="modify-button" text={"수정"}>
-        수정
-      </Button>
+      <Button data-testid="modify-button" text={"수정"} />
+
       <Button
         data-testid="delete-button"
         text={"삭제"}
         onClickHandler={deleteItem}
-      >
-        삭제
-      </Button>
+      />
     </li>
   );
 };
