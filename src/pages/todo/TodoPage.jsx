@@ -3,6 +3,7 @@ import useIsLoggedIn from "hooks/useIsLoggedIn";
 import Input from "components/atoms/Input";
 import Button from "components/atoms/button";
 import TodoItemList from "./components/TodoItemList";
+import { Container } from "../../styles/globalStyles";
 import { getTodoApi, createTodoApi } from "services/apis/todoApi";
 
 const TodoPage = () => {
@@ -24,7 +25,7 @@ const TodoPage = () => {
   };
 
   return (
-    <div>
+    <Container>
       <div>투두리스트</div>
       <Input
         data-testid="new-todo-input"
@@ -50,7 +51,7 @@ const TodoPage = () => {
           );
         })}
       </ul>
-    </div>
+    </Container>
   );
 };
 
