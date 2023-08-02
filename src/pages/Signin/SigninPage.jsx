@@ -38,14 +38,14 @@ const SigninPage = () => {
         type="email"
         placeholder="이메일"
         value={form.email}
-        handler={changeEmail}
+        onChange={changeEmail}
       />
       <Input
         testid="password-input"
         type="password"
         placeholder="비밀번호"
         value={form.password}
-        handler={changePassword}
+        onChange={changePassword}
       />
       <Button
         testid="signin-button"

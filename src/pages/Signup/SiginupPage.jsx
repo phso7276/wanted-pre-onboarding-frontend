@@ -48,7 +48,7 @@ const SignupPage = () => {
         type="password"
         placeholder="비밀번호"
         value={form.password}
-        handler={changePassword}
+        onChange={changePassword}
       />
 
       {isValid.isEmail && isValid.isPassword ? (
