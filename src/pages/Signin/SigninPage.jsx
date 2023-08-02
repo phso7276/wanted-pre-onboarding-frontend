@@ -4,6 +4,7 @@ import Input from "components/atoms/Input";
 import Button from "components/atoms/button";
 import { signinApi } from "services/apis/userApi";
 import useIsLoggedIn from "hooks/useIsLoggedIn";
+import { Container } from "../../styles/globalStyles";
 
 const SigninPage = () => {
   useIsLoggedIn();
@@ -32,7 +33,7 @@ const SigninPage = () => {
     setForm({ ...form, password: e.target.value });
   };
   return (
-    <div>
+    <Container>
       <Input
         testid="email-input"
         type="email"
@@ -53,7 +54,7 @@ const SigninPage = () => {
         text="로그인"
         onClickHandler={onClickHandler}
       />
-    </div>
+    </Container>
   );
 };
 
