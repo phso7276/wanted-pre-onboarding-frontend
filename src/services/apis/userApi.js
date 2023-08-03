@@ -6,7 +6,7 @@ export const signinApi = async (userInfo, expirationDate) => {
     const response = await baseInstance.post("/auth/signin", userInfo);
 
     // if (response.data["status"] === 200) {
-    //   Storage.setCurrentUser(userInfo["user_id"]);
+    //   localStorage.setItem("token");
     // }
 
     return response;
