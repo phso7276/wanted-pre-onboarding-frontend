@@ -19,7 +19,8 @@ const SignupPage = () => {
 
   const navigate = useNavigate();
 
-  const onClickHandler = () => {
+  const onClickHandler = (e) => {
+    e.preventDefault();
     signupApi(form).then((res) => {
       console.log(res.status);
       if (res.status === 201) {
@@ -36,36 +37,38 @@ const SignupPage = () => {
   };
   return (
     <div>
-      <Input
-        testid={"email-input"}
-        type={"email"}
-        placeholder={"이메일"}
-        value={form.email}
-        onChange={changeEmail}
-      />
-      <Input
-        testid="password-input"
-        type="password"
-        placeholder="비밀번호"
-        value={form.password}
-        onChange={changePassword}
-      />
+      <form>
+        <Input
+          testid={"email-input"}
+          type={"email"}
+          placeholder={"이메일"}
+          value={form.email}
+          onChange={changeEmail}
+        />
+        <Input
+          testid="password-input"
+          type="password"
+          placeholder="비밀번호"
+          value={form.password}
+          onChange={changePassword}
+        />
 
-      {isValid.isEmail && isValid.isPassword ? (
-        <Button
-          testid="signup-button"
-          type="button"
-          text="회원가입"
-          onClickHandler={onClickHandler}
-        />
-      ) : (
-        <Button
-          testid="signup-button"
-          type="button"
-          text="회원가입"
-          disabled="true"
-        />
-      )}
+        {isValid.isEmail && isValid.isPassword ? (
+          <Button
+            testid="signup-button"
+            type="button"
+            text="회원가입"
+            onClickHandler={onClickHandler}
+          />
+        ) : (
+          <Button
+            testid="signup-button"
+            type="button"
+            text="회원가입"
+            disabled="true"
+          />
+        )}
+      </form>
     </div>
   );
 };
