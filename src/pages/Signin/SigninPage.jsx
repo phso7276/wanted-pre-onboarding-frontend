@@ -15,9 +15,10 @@ const SigninPage = () => {
 
   const navigate = useNavigate();
 
-  const onClickHandler = () => {
+  const onClickHandler = (e) => {
+    e.preventDefault();
     signinApi(form).then((res) => {
-      console.log(res);
+      console.log(res.data["access_token"]);
       if (res.status === 200) {
         //access token local storage에 저장
         localStorage.setItem("token", res.data["access_token"]);
@@ -34,26 +35,27 @@ const SigninPage = () => {
   };
   return (
     <Container>
-      <Input
-        testid="email-input"
-        type="email"
-        placeholder="이메일"
-        value={form.email}
-        onChange={changeEmail}
-      />
-      <Input
-        testid="password-input"
-        type="password"
-        placeholder="비밀번호"
-        value={form.password}
-        onChange={changePassword}
-      />
-      <Button
-        testid="signin-button"
-        type="button"
-        text="로그인"
-        onClickHandler={onClickHandler}
-      />
+      <form>
+        <Input
+          testid="email-input"
+          type="email"
+          placeholder="이메일"
+          value={form.email}
+          onChange={changeEmail}
+        />
+        <Input
+          testid="password-input"
+          type="password"
+          placeholder="비밀번호"
+          value={form.password}
+          onChange={changePassword}
+        />
+        <Button
+          testid="signin-button"
+          text="로그인"
+          onClickHandler={onClickHandler}
+        />
+      </form>
     </Container>
   );
 };
