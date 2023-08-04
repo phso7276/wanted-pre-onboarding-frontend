@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Navigate } from "react-router";
-import Input from "components/atoms/Input";
+import Input, { StyledInput } from "components/atoms/Input";
 import Button from "components/atoms/button";
 import { signinApi } from "services/apis/userApi";
 import useIsLoggedIn from "hooks/useIsLoggedIn";
-import { Container } from "../../styles/globalStyles";
+import { FormContainer, Container } from "../../styles/globalStyles";
+import styled from "styled-components";
+import { Label, LoginBox, LoginInput } from "./style";
 
 const SigninPage = () => {
   useIsLoggedIn();
@@ -34,30 +36,50 @@ const SigninPage = () => {
     setForm({ ...form, password: e.target.value });
   };
   return (
-    <Container>
+    <FormContainer>
+      <Label>Login</Label>
       <form>
-        <Input
-          testid="email-input"
-          type="email"
-          placeholder="이메일"
-          value={form.email}
-          onChange={changeEmail}
-        />
-        <Input
-          testid="password-input"
-          type="password"
-          placeholder="비밀번호"
-          value={form.password}
-          onChange={changePassword}
-        />
+        <LoginBox>
+          <LoginInput
+            testid="email-input"
+            type="email"
+            placeholder="이메일"
+            value={form.email}
+            onChange={changeEmail}
+          />
+          <LoginInput
+            testid="password-input"
+            type="password"
+            placeholder="비밀번호"
+            value={form.password}
+            onChange={changePassword}
+          />
+        </LoginBox>
         <Button
           testid="signin-button"
           text="로그인"
           onClickHandler={onClickHandler}
         />
       </form>
-    </Container>
+    </FormContainer>
   );
 };
+
+// const Label = styled.span`
+//   font-size: 18px;
+//   color: rgb(5, 48, 157);
+//   padding: 10px 12px;
+//   display: flex;
+// `;
+
+// const LoginBox = styled(Container)`
+//   padding: 10px 0px;
+// `;
+
+// const NewInput = styled(StyledInput)`
+//   border: none;
+//   background: #e9ecef;
+//   border-radius: 5px;
+// `;
 
 export default SigninPage;

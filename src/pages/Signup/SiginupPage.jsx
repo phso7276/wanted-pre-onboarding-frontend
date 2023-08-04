@@ -5,6 +5,8 @@ import Button from "components/atoms/button";
 import useValidation from "hooks/useValidation";
 import { signupApi } from "services/apis/signupApi";
 import useIsLoggedIn from "hooks/useIsLoggedIn";
+import { FormContainer } from "styles/globalStyles";
+import { Label, SignupBox, SignupInput } from "./style";
 
 const SignupPage = () => {
   useIsLoggedIn();
@@ -13,9 +15,6 @@ const SignupPage = () => {
     password: "",
   });
   const { isValid } = useValidation(form);
-  // useEffect(() => {
-  //   console.log(isValid);
-  // }, [isValid]);
 
   const navigate = useNavigate();
 
@@ -36,23 +35,25 @@ const SignupPage = () => {
     setForm({ ...form, password: e.target.value });
   };
   return (
-    <div>
+    <FormContainer>
+      <Label>회원가입</Label>
       <form>
-        <Input
-          testid={"email-input"}
-          type={"email"}
-          placeholder={"이메일"}
-          value={form.email}
-          onChange={changeEmail}
-        />
-        <Input
-          testid="password-input"
-          type="password"
-          placeholder="비밀번호"
-          value={form.password}
-          onChange={changePassword}
-        />
-
+        <SignupBox>
+          <SignupInput
+            testid={"email-input"}
+            type={"email"}
+            placeholder={"이메일"}
+            value={form.email}
+            onChange={changeEmail}
+          />
+          <SignupInput
+            testid="password-input"
+            type="password"
+            placeholder="비밀번호"
+            value={form.password}
+            onChange={changePassword}
+          />
+        </SignupBox>
         {isValid.isEmail && isValid.isPassword ? (
           <Button
             testid="signup-button"
@@ -69,7 +70,7 @@ const SignupPage = () => {
           />
         )}
       </form>
-    </div>
+    </FormContainer>
   );
 };
 

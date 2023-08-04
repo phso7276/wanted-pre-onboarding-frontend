@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import useIsLoggedIn from "hooks/useIsLoggedIn";
-import Input from "components/atoms/Input";
 import Button from "components/atoms/button";
 import TodoItemList from "./components/TodoItemList";
-import { Container } from "../../styles/globalStyles";
+import { TodoContainer } from "../../styles/globalStyles";
 import { getTodoApi, createTodoApi } from "services/apis/todoApi";
+import { NewInput, TodoHeader } from "./style";
 
 const TodoPage = () => {
   useIsLoggedIn();
@@ -27,10 +27,9 @@ const TodoPage = () => {
   };
 
   return (
-    <Container>
-      <div>투두리스트</div>
-      <form>
-        <Input
+    <TodoContainer>
+      <TodoHeader>
+        <NewInput
           data-testid="new-todo-input"
           value={todo}
           onChange={(e) => {
@@ -42,7 +41,7 @@ const TodoPage = () => {
           text="추가"
           onClickHandler={onClickHandler}
         />
-      </form>
+      </TodoHeader>
       <ul>
         {todoList.map((item) => {
           return (
@@ -55,8 +54,23 @@ const TodoPage = () => {
           );
         })}
       </ul>
-    </Container>
+    </TodoContainer>
   );
 };
 
 export default TodoPage;
+// const NewInput = styled(StyledInput)`
+//   border: none;
+//   background: #e9ecef;
+//   border-radius: 5px;
+//   padding: 5px 10px;
+//   width: 20rem;
+// `;
+
+// const TodoHeader = styled.form`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px;
+//   gap: 10px;
+// `;

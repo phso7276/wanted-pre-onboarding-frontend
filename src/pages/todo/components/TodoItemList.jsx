@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import TodoItem from "components/organisms/Todoitem";
 import Button from "../../../components/atoms/button";
-import Input from "../../../components/atoms/Input";
+import Input, { StyledInput } from "../../../components/atoms/Input";
 import { updateTodoApi, deleteTodoApi } from "services/apis/todoApi";
+import { styled } from "styled-components";
+import { ItemList, ButtonBox } from "../style";
 
 const TodoItemList = ({ todo, todoList, setTodoList }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -44,7 +46,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
 
   return (
     <div>
-      <li>
+      <ItemList>
         <label>
           <Input
             type={"checkbox"}
@@ -68,7 +70,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
             </>
           )}
         </label>
-        <div>
+        <ButtonBox>
           {isEdit ? (
             <>
               <Button
@@ -104,10 +106,21 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
               />
             </>
           )}
-        </div>
-      </li>
+        </ButtonBox>
+      </ItemList>
     </div>
   );
 };
 
 export default TodoItemList;
+
+// const ItemList = styled.li`
+//   list-style: none;
+//   display: flex;
+//   gap: 12px;
+// `;
+
+// const ButtonBox = styled.div`
+//   display: flex;
+//   gap: 3px;
+// `;
