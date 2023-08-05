@@ -11,9 +11,10 @@ export default function useValidation(form) {
 
   useEffect(() => {
     console.log(form.email);
-    const emailExp =
-      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    if (!emailExp.test(form.email)) {
+    const email = form.email;
+    // const emailExp =
+    //   /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    if (!email.includes("@")) {
       console.log("이메일 오류");
       setIsValid({ ...isValid, isEmail: false });
     } else {
