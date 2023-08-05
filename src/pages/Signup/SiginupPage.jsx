@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "components/atoms/Input";
+import { Link } from "react-router-dom";
 import Button from "components/atoms/button";
 import useValidation from "hooks/useValidation";
 import { signupApi } from "services/apis/signupApi";
@@ -68,10 +68,12 @@ const SignupPage = () => {
             testid="signup-button"
             type="button"
             text="회원가입"
-            disabled="true"
+            disabled
           />
         )}
       </form>
+      <br />
+      <Link to="/signin">이미 계정이 있다면👉 로그인</Link>
     </FormContainer>
   );
 };

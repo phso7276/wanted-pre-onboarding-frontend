@@ -66,18 +66,3 @@ const TodoPage = () => {
 };
 
 export default TodoPage;
-// const NewInput = styled(StyledInput)`
-//   border: none;
-//   background: #e9ecef;
-//   border-radius: 5px;
-//   padding: 5px 10px;
-//   width: 20rem;
-// `;
-
-// const TodoHeader = styled.form`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 10px;
-//   gap: 10px;
-// `;

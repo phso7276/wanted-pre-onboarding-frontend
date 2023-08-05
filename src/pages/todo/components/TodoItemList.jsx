@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import TodoItem from "components/organisms/Todoitem";
 import Button from "../../../components/atoms/button";
-import Input, { StyledInput } from "../../../components/atoms/Input";
+import Input from "../../../components/atoms/Input";
 import { updateTodoApi, deleteTodoApi } from "services/apis/todoApi";
-import { styled } from "styled-components";
 import { ItemList, ButtonBox } from "../style";
 
 const TodoItemList = ({ todo, todoList, setTodoList }) => {
