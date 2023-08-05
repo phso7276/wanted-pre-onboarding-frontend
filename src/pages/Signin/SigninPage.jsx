@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Navigate } from "react-router";
-import Input, { StyledInput } from "components/atoms/Input";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import Button from "components/atoms/button";
 import { signinApi } from "services/apis/userApi";
 import useIsLoggedIn from "hooks/useIsLoggedIn";
-import { FormContainer, Container } from "../../styles/globalStyles";
-import styled from "styled-components";
+import { FormContainer } from "../../styles/globalStyles";
 import { Label, LoginBox, LoginInput } from "./style";
 
 const SigninPage = () => {
@@ -68,6 +67,8 @@ const SigninPage = () => {
           onClickHandler={onClickHandler}
         />
       </form>
+      <br />
+      <Link to="/signup">아직 회원이 아니라면👉 회원가입</Link>
     </FormContainer>
   );
 };
