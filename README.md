@@ -40,7 +40,7 @@ https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/c997e
 `/signin` 페이지, `/signup`,`/todo` 페이지로 이동이 가능한 버튼이 있습니다.
 
    
- ### ✅ 로그인 (`/signin` 페이지) / 회원가입(`/signup` 페이지)</br>
+ ### ✅  회원가입 / 로그인 </br>
   
 - `/signup` 경로에 회원가입 기능을 개발해주세요
 - `/signin` 경로에 로그인 기능을 개발해주세요
@@ -76,12 +76,6 @@ https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/c997e
   - 로컬 스토리지에 토큰이 있는 상태로 `/signin` 또는 `/signup` 페이지에 접속한다면 `/todo` 경로로 리다이렉트 시켜주세요
   - 로컬 스토리지에 토큰이 없는 상태로 `/todo`페이지에 접속한다면 `/signin` 경로로 리다이렉트 시켜주세요
     
-https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/268092fa-67df-44cd-8d31-d809c068b751
-
-
-
-
-   
 
 
 ### ✅ Todo (`/todo` 페이지) </br>
