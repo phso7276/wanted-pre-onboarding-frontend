@@ -22,21 +22,22 @@
 
 ## 배포 주소
 
+## 데모 영상
+https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/c997e5f0-3a48-46d5-9505-703aa69203b6
+
+
+
+
+
+
+
+
 
 ## 기능 구현
 
 ### ✅ 메인 (`/` 페이지)</br>
 
 `/signin` 페이지, `/signup`,`/todo` 페이지로 이동이 가능한 버튼이 있습니다.
-
-   <details>
-    <summary>데모 영상</summary>
-    <div>
-     <img src="" width="50%">
-    </div>
-   </details> 
-   </br>
-
 
    
  ### ✅ 로그인 (`/signin` 페이지) / 회원가입(`/signup` 페이지)</br>
@@ -74,6 +75,13 @@
 
   - 로컬 스토리지에 토큰이 있는 상태로 `/signin` 또는 `/signup` 페이지에 접속한다면 `/todo` 경로로 리다이렉트 시켜주세요
   - 로컬 스토리지에 토큰이 없는 상태로 `/todo`페이지에 접속한다면 `/signin` 경로로 리다이렉트 시켜주세요
+    
+https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/268092fa-67df-44cd-8d31-d809c068b751
+
+
+
+
+   
 
 
 ### ✅ Todo (`/todo` 페이지) </br>
@@ -91,15 +99,6 @@
 #### Assignment 6
 
 - 리스트 페이지에 새로운 TODO를 입력할 수 있는 input과 추가 button을 만들어주세요
-
-  - TODO 입력 input에는 `data-testid="new-todo-input"` 속성을 부여해주세요
-  - TODO 추가 button에는 `data-testid="new-todo-add-button"` 속성을 부여해주세요
-
-    ```html
-    <input data-testid="new-todo-input" />
-    <button data-testid="new-todo-add-button">추가</button>
-    ```
-
 - 추가 button을 클릭하면 입력 input의 내용이 새로운 TODO로 추가되도록 해주세요
 - TODO를 추가 한 뒤 새로고침을 해도 추가한 TODO가 목록에 보여야 합니다.
 
@@ -111,8 +110,6 @@
 
 - TODO 우측에 수정버튼과 삭제 버튼을 만들어주세요
 
-  - 수정 버튼에는 `data-testid="modify-button"` 속성을 부여해주세요
-  - 삭제 버튼에는 `data-testid="delete-button"` 속성을 부여해주세요
 
 #### Assignment 9
 
@@ -127,10 +124,7 @@
   - TODO 우측의 수정 버튼을 누르면 수정모드가 활성화 되도록 해주세요
   - 수정모드에서는 TODO의 내용을 변경할 수 있어야 합니다.
   - 수정모드에서는 TODO의 내용이 input창 안에 입력된 형태로 변경해주세요
-    - 수정 input창에는 `data-testid="modify-input"` 속성을 부여해주세요
   - 수정모드에서는 TODO의 우측에 제출버튼과 취소버튼이 표시되게 해주세요
-    - 제출버튼에는 `data-testid="submit-button"` 속성을 부여해주세요
-    - 취소버튼에는 `data-testid="cancel-button"` 속성을 부여해주세요
   - 제출버튼을 누르면 수정한 내용을 제출해서 내용이 업데이트 될 수 있도록 해주세요
   - 취소버튼을 누르면 수정한 내용을 초기화 하고, 수정모드를 비활성화 해주세요
 
