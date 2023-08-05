@@ -12,36 +12,42 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
 
   const checkboxHandler = (e) => {
     const newValue = e.target.checked;
-    updateTodoApi(todo.id, todo.todo, newValue).then((res) => {
-      const data = res.data;
-      console.log(data);
-      setTodoList(
-        todoList.map((item) =>
-          item.id === todo.id
-            ? { ...item, isCompleted: data.isCompleted }
-            : item
-        )
-      );
-    });
+    updateTodoApi(todo.id, todo.todo, newValue)
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+        setTodoList(
+          todoList.map((item) =>
+            item.id === todo.id
+              ? { ...item, isCompleted: data.isCompleted }
+              : item
+          )
+        );
+      })
+      .catch(() => {});
   };
 
   const onClickUpdateTodo = () => {
-    updateTodoApi(todo.id, newText, todo.isCompleted).then((res) => {
-      const data = res.data;
-      console.log(data);
-      setTodoList(
-        todoList.map((item) =>
-          item.id === todo.id ? { ...item, todo: data.todo } : item
-        )
-      );
-    });
+    updateTodoApi(todo.id, newText, todo.isCompleted)
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+        setTodoList(
+          todoList.map((item) =>
+            item.id === todo.id ? { ...item, todo: data.todo } : item
+          )
+        );
+      })
+      .catch(() => {});
   };
 
   const deleteItem = () => {
-    deleteTodoApi(todo.id).then((res) => {
-      console.log(res);
-      setTodoList(todoList.filter((item) => item.id !== todo.id));
-    });
+    deleteTodoApi(todo.id)
+      .then((res) => {
+        console.log(res);
+        setTodoList(todoList.filter((item) => item.id !== todo.id));
+      })
+      .catch(() => {});
   };
 
   return (

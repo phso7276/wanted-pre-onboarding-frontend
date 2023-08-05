@@ -19,11 +19,18 @@ const TodoPage = () => {
 
   const onClickHandler = (e) => {
     e.preventDefault();
-    setTodo("");
+    if (todo === "") {
+      alert("할 일을 입력해 주세요");
+      e.preventDefault();
+      return false;
+    }
     /**post api호출 */
-    createTodoApi(todo).then((res) => {
-      setTodoList([...todoList].concat(res.data));
-    });
+    createTodoApi(todo)
+      .then((res) => {
+        setTodoList([...todoList].concat(res.data));
+        setTodo("");
+      })
+      .catch(() => {});
   };
 
   return (

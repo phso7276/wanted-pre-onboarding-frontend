@@ -20,12 +20,14 @@ const SignupPage = () => {
 
   const onClickHandler = (e) => {
     e.preventDefault();
-    signupApi(form).then((res) => {
-      console.log(res.status);
-      if (res.status === 201) {
-        navigate("/signin");
-      }
-    });
+    signupApi(form)
+      .then((res) => {
+        console.log(res.status);
+        if (res.status === 201) {
+          navigate("/signin");
+        }
+      })
+      .catch(() => {});
   };
 
   const changeEmail = (e) => {
