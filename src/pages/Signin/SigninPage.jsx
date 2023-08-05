@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import Button from "components/atoms/button";
@@ -72,22 +72,5 @@ const SigninPage = () => {
     </FormContainer>
   );
 };
-
-// const Label = styled.span`
-//   font-size: 18px;
-//   color: rgb(5, 48, 157);
-//   padding: 10px 12px;
-//   display: flex;
-// `;
-
-// const LoginBox = styled(Container)`
-//   padding: 10px 0px;
-// `;
-
-// const NewInput = styled(StyledInput)`
-//   border: none;
-//   background: #e9ecef;
-//   border-radius: 5px;
-// `;
 
 export default SigninPage;
