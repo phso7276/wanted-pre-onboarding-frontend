@@ -18,15 +18,22 @@ const SigninPage = () => {
   const navigate = useNavigate();
 
   const onClickHandler = (e) => {
+    if (form.email === "" || form.password === "") {
+      alert("아이디와 비밀번호를 입력해주세요");
+      e.preventDefault();
+      return false;
+    }
     e.preventDefault();
-    signinApi(form).then((res) => {
-      console.log(res.data["access_token"]);
-      if (res.status === 200) {
-        //access token local storage에 저장
-        localStorage.setItem("token", res.data["access_token"]);
-        navigate("/todo");
-      }
-    });
+    signinApi(form)
+      .then((res) => {
+        console.log(res.data["access_token"]);
+        if (res.status === 200) {
+          //access token local storage에 저장
+          localStorage.setItem("token", res.data["access_token"]);
+          navigate("/todo");
+        }
+      })
+      .catch(() => {});
   };
 
   const changeEmail = (e) => {
