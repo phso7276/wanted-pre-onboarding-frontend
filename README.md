@@ -25,6 +25,8 @@
 
 ## 배포 주소
 
+https://wanted-pre-onboarding-frontend-two-gilt.vercel.app/
+
 ## 데모 영상
 
 https://github.com/phso7276/wanted-pre-onboarding-frontend/assets/76393035/c997e5f0-3a48-46d5-9505-703aa69203b6
