@@ -22,7 +22,6 @@ const SignupPage = () => {
     e.preventDefault();
     signupApi(form)
       .then((res) => {
-        console.log(res.status);
         if (res.status === 201) {
           navigate("/signin");
         }
@@ -49,25 +48,25 @@ const SignupPage = () => {
             onChange={changeEmail}
           />
           <SignupInput
-            testid="password-input"
-            type="password"
-            placeholder="비밀번호"
+            testid={"password-input"}
+            type={"password"}
+            placeholder={"비밀번호"}
             value={form.password}
             onChange={changePassword}
           />
         </SignupBox>
         {isValid.isEmail && isValid.isPassword ? (
           <Button
-            testid="signup-button"
-            type="button"
-            text="회원가입"
+            testid={"signup-button"}
+            type={"button"}
+            text={"회원가입"}
             onClickHandler={onClickHandler}
           />
         ) : (
           <Button
-            testid="signup-button"
-            type="button"
-            text="회원가입"
+            testid={"signup-button"}
+            type={"button"}
+            text={"회원가입"}
             disabled
           />
         )}

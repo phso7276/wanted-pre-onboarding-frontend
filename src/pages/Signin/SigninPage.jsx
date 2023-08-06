@@ -25,7 +25,6 @@ const SigninPage = () => {
     e.preventDefault();
     signinApi(form)
       .then((res) => {
-        console.log(res.data["access_token"]);
         if (res.status === 200) {
           //access token local storage에 저장
           localStorage.setItem("token", res.data["access_token"]);
@@ -47,23 +46,23 @@ const SigninPage = () => {
       <form>
         <LoginBox>
           <LoginInput
-            testid="email-input"
-            type="email"
-            placeholder="이메일"
+            testid={"email-input"}
+            type={"email"}
+            placeholder={"이메일"}
             value={form.email}
             onChange={changeEmail}
           />
           <LoginInput
-            testid="password-input"
-            type="password"
-            placeholder="비밀번호"
+            testid={"password-input"}
+            type={"password"}
+            placeholder={"비밀번호"}
             value={form.password}
             onChange={changePassword}
           />
         </LoginBox>
         <Button
-          testid="signin-button"
-          text="로그인"
+          testid={"signin-button"}
+          text={"로그인"}
           onClickHandler={onClickHandler}
         />
       </form>

@@ -13,7 +13,6 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
     updateTodoApi(todo.id, todo.todo, newValue)
       .then((res) => {
         const data = res.data;
-        console.log(data);
         setTodoList(
           todoList.map((item) =>
             item.id === todo.id
@@ -29,7 +28,6 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
     updateTodoApi(todo.id, newText, todo.isCompleted)
       .then((res) => {
         const data = res.data;
-        console.log(data);
         setTodoList(
           todoList.map((item) =>
             item.id === todo.id ? { ...item, todo: data.todo } : item
@@ -42,7 +40,6 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
   const deleteItem = () => {
     deleteTodoApi(todo.id)
       .then((res) => {
-        console.log(res);
         setTodoList(todoList.filter((item) => item.id !== todo.id));
       })
       .catch(() => {});
@@ -61,7 +58,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           {isEdit ? (
             <>
               <Input
-                data-testid="modify-input"
+                data-testid={"modify-input"}
                 value={newText}
                 onChange={(e) => {
                   setNewText(e.target.value);
@@ -78,7 +75,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           {isEdit ? (
             <>
               <Button
-                data-testid="submit-button"
+                data-testid={"submit-button"}
                 text={"제출"}
                 onClickHandler={() => {
                   onClickUpdateTodo();
@@ -86,7 +83,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
                 }}
               />
               <Button
-                data-testid="cancel-button"
+                data-testid={"cancel-button"}
                 text={"취소"}
                 onClickHandler={() => {
                   setIsEdit(false);
@@ -97,14 +94,14 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           ) : (
             <>
               <Button
-                data-testid="modify-button"
+                data-testid={"modify-button"}
                 text={"수정"}
                 onClickHandler={() => {
                   setIsEdit(true);
                 }}
               />
               <Button
-                data-testid="delete-button"
+                data-testid={"delete-button"}
                 text={"삭제"}
                 onClickHandler={deleteItem}
               />

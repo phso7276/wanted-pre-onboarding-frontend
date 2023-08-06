@@ -37,15 +37,15 @@ const TodoPage = () => {
     <TodoContainer>
       <TodoHeader>
         <NewInput
-          data-testid="new-todo-input"
+          data-testid={"new-todo-input"}
           value={todo}
           onChange={(e) => {
             setTodo(e.target.value);
           }}
         />
         <Button
-          data-testid="new-todo-add-button"
-          text="추가"
+          data-testid={"new-todo-add-button"}
+          text={"추가"}
           onClickHandler={onClickHandler}
         />
       </TodoHeader>
