@@ -117,14 +117,3 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
 };
 
 export default TodoItemList;
-
-// const ItemList = styled.li`
-//   list-style: none;
-//   display: flex;
-//   gap: 12px;
-// `;
-
-// const ButtonBox = styled.div`
-//   display: flex;
-//   gap: 3px;
-// `;
