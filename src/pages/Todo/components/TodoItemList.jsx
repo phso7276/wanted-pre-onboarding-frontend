@@ -58,7 +58,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           {isEdit ? (
             <>
               <Input
-                data-testid={"modify-input"}
+                testid={"modify-input"}
                 value={newText}
                 onChange={(e) => {
                   setNewText(e.target.value);
@@ -75,7 +75,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           {isEdit ? (
             <>
               <Button
-                data-testid={"submit-button"}
+                testid={"submit-button"}
                 text={"제출"}
                 onClickHandler={() => {
                   onClickUpdateTodo();
@@ -83,7 +83,7 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
                 }}
               />
               <Button
-                data-testid={"cancel-button"}
+                testid={"cancel-button"}
                 text={"취소"}
                 onClickHandler={() => {
                   setIsEdit(false);
@@ -94,14 +94,14 @@ const TodoItemList = ({ todo, todoList, setTodoList }) => {
           ) : (
             <>
               <Button
-                data-testid={"modify-button"}
+                testid={"modify-button"}
                 text={"수정"}
                 onClickHandler={() => {
                   setIsEdit(true);
                 }}
               />
               <Button
-                data-testid={"delete-button"}
+                testid={"delete-button"}
                 text={"삭제"}
                 onClickHandler={deleteItem}
               />
